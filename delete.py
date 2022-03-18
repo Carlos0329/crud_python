@@ -2,8 +2,10 @@ import os
 import sqlite3
 import smtplib
 
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(BASE_DIR, "codeina.db")
+
 
 def delete(correo):
     #se conecta a la base de datos
@@ -16,7 +18,6 @@ def delete(correo):
     con_bd.commit()
     #cierre del cursor
     cursor_db.close()
-
     if sql:
         return "Datos eliminados correctamente"
     else:
