@@ -3,8 +3,10 @@ import os
 import sqlite3
 import smtplib
 
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(BASE_DIR, "codeina.db")
+
 
 def validar(correo):
     con_bd = sqlite3.connect('codeina.db')
@@ -21,6 +23,7 @@ def validar(correo):
     else:
         return False
 
+    
 def update(contrasena,nombre,rol,correo):
     #se conecta a la base de datos
     con_bd = sqlite3.connect('codeina.db')
@@ -32,7 +35,6 @@ def update(contrasena,nombre,rol,correo):
     con_bd.commit()
     #cierre del cursor
     cursor_db.close()
-
     if sql:
         return "Datos actualizados correctamente"
     else:
