@@ -3,6 +3,7 @@ from flask import Flask
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+
 def enviarCorreo(correo,nombre,rol):
     #credenciales
         proveedor_correo = 'smtp.gmail.com: 587'
@@ -14,7 +15,6 @@ def enviarCorreo(correo,nombre,rol):
         servidor.ehlo()
         #autenticacion
         servidor.login(remitente, password)
-
         if rol ==1:
             rol="Administrador"
         elif rol==2:
