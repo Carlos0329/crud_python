@@ -7,6 +7,7 @@ from enviar import enviarCorreo
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(BASE_DIR, "codeina.db")
 
+
 def registro(correo, contrasena, nombre, rol):
     #se conecta a la base de datos
     con_bd = sqlite3.connect('codeina.db')
