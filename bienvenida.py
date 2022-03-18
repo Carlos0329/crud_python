@@ -2,8 +2,10 @@ import os
 import sqlite3
 import smtplib
 
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(BASE_DIR, "codeina.db")
+
 
 def bienvenida(correo):
     con_bd = sqlite3.connect('codeina.db')
@@ -13,7 +15,6 @@ def bienvenida(correo):
     sql = "SELECT * FROM  usuarios WHERE correo=?"
     cursor_db.execute(sql, (correo,))
     fila = cursor_db.fetchone()
-    
     correo=fila[0]
     clave=fila[1]
     nombre=fila[2]
