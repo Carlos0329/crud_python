@@ -4,8 +4,10 @@ import smtplib
 from bienvenida import bienvenida
 from flask import Flask
 
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(BASE_DIR, "codeina.db")
+
 
 def login(correo, contrasena):
     #se conecta a la base de datos
